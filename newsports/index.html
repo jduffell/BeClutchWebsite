@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta charset="utf-8">
+    <title>BeClutch! | Home</title>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arima+Madurai" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a1ba7e80e8.js" crossorigin="anonymous"></script>
+    
+    <!-- JQuery (Required for original scripts) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Combined CSS from style (3).css -->
+    <style>
+        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}table{border-collapse:collapse;border-spacing:0;}
+
+        @font-face {
+            font-family: Cambria;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: #eee;
+        }
+
+        h2 {
+            font-family: 'Cambria';
+            line-height: 50px;
+            font-size: 36px;
+            color: #fff;
+        }
+
+        .horizontal-bar {
+            width: 100%; 
+            height: 2px; 
+            background: #fff;
+            margin-bottom: 20px;
+        }
+
+        .start-page-section {
+            width: 100%;
+            display: inline-block;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .start-page-section-inner {
+            max-width: 1000px;
+            width: 90%;
+            margin: auto;
+            display: inline-block;
+            padding: 20px 0;
+        }
+
+        /* HEADER */
+        #header {
+            width: 100%;
+            background: #505B1E;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            z-index: 100;
+        }
+        #header-inner {
+            max-width: 1000px;
+            width: 90%;
+            margin: auto;
+            padding: 10px 0;
+        }
+        .header-logo {
+            float: left;
+            margin-top: 7px;
+            width: 40px;
+            height: 40px;
+            background-color: #eee; /* Placeholder for logo */
+            border-radius: 50%;
+            display: inline-block;
+        }
+        #header-menu {
+            float: right;
+        }
+        #header-menu a {
+            color: #fff;
+            text-decoration: none;
+            line-height: 55px;
+            padding: 0 10px;
+            font-size: 16px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        #header-menu a:hover {
+            opacity: 1;
+        }
+        
+        #header-responsive {
+            display: none;
+            width: 100%;
+            background: #505B1E;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            z-index: 100;
+        }
+        #header-responsive > div {
+            color: #fff;
+            padding: 15px;
+            cursor: pointer;
+            text-align: right;
+        }
+        #header-responsive side {
+            display: none;
+            width: 100%;
+            position: absolute;
+            top: 55px;
+            background: #505B1E;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        #header-responsive side a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            opacity: 0.8;
+        }
+        #header-responsive side a:hover {
+            opacity: 1;
+        }
+
+        /* SECTION 1 - HOME SPLASH */
+        .start-page-section-1-1 {
+            width: 100%;
+            display: inline-block;
+            min-height: 400px;
+            padding-top: 100px; 
+            color: #fff;
+        }
+        .start-page-section-1-1 .app {
+            float: right;
+            width: 40%;
+            text-align: center;
+        }
+        .start-page-section-1-1 .slogan {
+            float: left;
+            width: 50%;
+        }
+        .start-page-section-1-1 h2 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .start-page-section-1-1 span {
+            font-size: 20px;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+        .start-page-section-1-1 img {
+            max-width: 150px;
+            margin: 10px;
+        }
+
+        /* SECTION 2 - FEATURES */
+        .start-page-section-1-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            padding-top: 50px;
+        }
+        .start-page-section-1-2 div {
+            padding: 20px;
+            text-align: center;
+            background: #F7F7F7;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .start-page-section-1-2 i {
+            font-size: 36px;
+            color: #7DB222;
+            margin-bottom: 15px;
+        }
+        .start-page-section-1-2 b {
+            display: block;
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .start-page-section-1-2 span {
+            color: #777;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* SECTION 3 - APP DOWNLOAD */
+        .start-page-section-3-1 {
+            background: #E4E4E6;
+            text-align: center;
+        }
+        .start-page-section-3-1 h2 {
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .start-page-section-3-1 img {
+            max-width: 250px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .start-page-section-3-1 a {
+            display: inline-block;
+        }
+        .start-page-section-3-1 p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* SECTION 4 - CONTACT */
+        .start-page-section-4-1 {
+            background: #6A912B;
+            text-align: center;
+        }
+        .start-page-section-4-1 h2 {
+            margin-bottom: 30px;
+        }
+        #contact-form {
+            max-width: 600px;
+            margin: auto;
+        }
+        #contact-form input[type='text'], #contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        #contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        #contact-form button {
+            background: #505B1E;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+        #contact-form button:hover {
+            background: #404a17;
+        }
+        #contact-form .error {
+            border: 2px solid #ff4c4c;
+        }
+
+        /* FOOTER */
+        #footer {
+            width: 100%;
+            background: #505B1E;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+        #footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            opacity: 0.8;
+        }
+
+        /* ACCORDION (For Support and Upgrade Pages) */
+        button.accordion {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0));
+            background-color: #7DB222;
+            color: #fff;
+            cursor: pointer;
+            padding: 18px;
+            margin: 2px 0;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: background-color 0.4s;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button.accordion.active, button.accordion:hover {
+            background-color: #ddd;
+            color: #555;
+        }
+
+        button.accordion.active .img-indicator {
+            transform: rotate(180deg);
+        }
+
+        button.accordion .img-indicator{
+            content: url("https://placehold.co/12x12/ffffff/000000?text=V"); /* Down arrow placeholder */
+            width: 12px;
+            height: 12px;
+            margin-left: 10px;
+            transition: transform 0.4s;
+        }
+        
+        button.accordion.active .img-indicator {
+             content: url("https://placehold.co/12x12/000000/ffffff?text=^"); /* Up arrow placeholder */
+        }
+
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            margin-bottom: 2px;
+            border-radius: 0 0 4px 4px;
+        }
+        .panel p {
+            padding: 15px 0;
+            color: #555;
+            line-height: 1.6;
+        }
+        .panel video {
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        /* PAGE CONTENT DIVS */
+        .page-content {
+            padding-top: 60px; /* Offset for fixed header */
+            display: none;
+        }
+        .page-content.active {
+            display: block;
+        }
+        
+        /* Support Page Specific */
+        .button-faq {
+            background-color: #505B1E;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 0 5px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .button-faq:hover {
+            background-color: #6A912B;
+        }
+        .faq-block h3 {
+            font-size: 20px;
+            color: #505B1E;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        /* Upgrade Page Specific */
+        .upgrade-callout {
+            text-align: center;
+            padding: 30px;
+            background: #F7F7F7;
+            border-radius: 8px;
+            margin: 20px 0 40px;
+        }
+        .upgrade-callout h3 {
+            color: #505B1E;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .upgrade-callout p {
+            color: #777;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .upgrade-button {
+            background: #E53935;
+            color: #fff;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 22px;
+            margin: 20px 0;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            transition: background 0.3s;
+            font-weight: bold;
+        }
+        .upgrade-button:hover {
+            background: #C62828;
+        }
+
+
+        /* MEDIA QUERIES */
+        @media (max-width: 800px) {
+            #header {
+                display: none;
+            }
+            #header-responsive {
+                display: block;
+            }
+            .page-content {
+                padding-top: 60px;
+            }
+            .start-page-section-1-1 .app,
+            .start-page-section-1-1 .slogan {
+                float: none;
+                width: 100%;
+                text-align: center;
+            }
+            .start-page-section-1-1 .slogan h2 {
+                font-size: 36px;
+            }
+            .start-page-section-1-1 {
+                min-height: auto;
+            }
+            .start-page-section-1-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Scroll Top Button -->
+<div id="scroll-top-button" style="position: fixed; bottom: 20px; right: 20px; background: #505B1E; color: white; width: 40px; height: 40px; line-height: 40px; text-align: center; border-radius: 50%; cursor: pointer; display: none; z-index: 90;">
+    <i class="fa fa-arrow-up" aria-hidden="true"></i>
+</div>
+
+<!-- Header (Desktop) -->
+<div id="header">
+    <div id="header-inner">
+        <a class="header-logo" href="#" data-page-id="home"></a>
+        <div id="header-menu">
+            <a href="#" data-page-id="home">Home</a>
+            <a href="#" data-page-id="home" data-anchor="features">Features</a>
+            <a href="#" data-page-id="home" data-anchor="app">App</a>
+            <a href="#" data-page-id="home" data-anchor="contact">Contact</a>
+            <a href="#" data-page-id="support">Support</a>
+            <a href="#" data-page-id="upgrade">Upgrade</a>
+        </div>
+    </div>
+</div>
+
+<!-- Header (Mobile) -->
+<div id="header-responsive">
+    <div>Menu</div>
+    <side>
+        <a href="#" data-page-id="home">Home</a>
+        <a href="#" data-page-id="home" data-anchor="features">Features</a>
+        <a href="#" data-page-id="home" data-anchor="app">App</a>
+        <a href="#" data-page-id="home" data-anchor="contact">Contact</a>
+        <a href="#" data-page-id="support">Support</a>
+        <a href="#" data-page-id="upgrade">Upgrade</a>
+    </side>
+</div>
+
+<!-- PAGE CONTENT CONTAINER -->
+<div id="main-content-container">
+
+    <!-- HOME PAGE CONTENT -->
+    <div id="page-home" class="page-content active">
+        <!-- Section 1: Splash/Slogan -->
+        <div class="start-page-section" style="background-color: #7FB522">
+            <div class="start-page-section-1-1">
+                <div class="start-page-section-inner">
+                    <div class='app'>
+                        <a href="https://apps.apple.com/" target="_blank"><img src="https://placehold.co/150x50/505B1E/ffffff?text=App+Store" alt="App Store Download"></a>
+                        <a href="https://play.google.com/" target="_blank"><img src="https://placehold.co/150x50/505B1E/ffffff?text=Google+Play" alt="Google Play Download"></a>
+                    </div>
+                    <div class='slogan'>
+                        <h2>Be organized, Be successful...BeClutch!</h2>
+                        <span>
+                            BeClutch! was designed with the sole purpose of providing a platform for businesses, clubs, and teams to communicate and organize all events and activities in one place. With Beclutch, several Apps are no longer needed to meet all the organizational needs of a group of any size. Handle communication via chats, coordinate schedules, calendar events, and manage finances easily with intuitive and simple to use interfaces. An organized team/group is a successful team/group.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 2: Features -->
+        <div class="start-page-section" style="background-color: white;">
+            <div class="start-page-section-inner" id="features">
+                <div class="horizontal-bar" style="background: #a1af36;"></div>
+                <h2 style="color: #555; text-align: center;">Features</h2>
+                <div class="start-page-section-1-2">
+                    <div>
+                        <i class="fa fa-comments"></i>
+                        <b>COMMUNICATE</b>
+                        <span>Use the BeClutch Chat feature for real time communication between all members or individuals to coordinate business, social, fundraising and sporting events.</span>
+                    </div>
+                    <div>
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <b>PLAN AHEAD</b>
+                        <span>Schedule upcoming events and view past events in the BeClutch Calendar feature. See start/finish/arrival times, set availability, receive reminders and even set carpool needs.</span>
+                    </div>
+                    <div>
+                        <i class="fa fa-usd" aria-hidden="true"></i>
+                        <b>MANAGE FUNDS</b>
+                        <span>The BeClutch Fees feature conveniently allows for individual member payments in one place for seamless management of funds and budgets.</span>
+                    </div>
+                    <div>
+                        <i class="fa fa-list" aria-hidden="true"></i>
+                        <b>TAKE SURVEYS</b>
+                        <span>Gather information about about individual availability and preferences by using the BeClutch Survey feature.</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-user-check" aria-hidden="true"></i>
+                        <b>STAY INFORMED</b>
+                        <span>The BeClutch Attendance feature allows you to know who and how many will be attending an event as well as who attended past events.</span>
+                    </div>
+                    <div>
+                        <i class="fa fa-paint-brush"></i>
+                        <b>MAKE IT PERSONAL</b>
+                        <span>Use the BeClutch Themes feature to assign the colors and logo that represent your group or team.</span>
+                    </div>
+                    <div>
+                        <i class="fa fa-bell" aria-hidden="true"></i>
+                        <b>BE PREPARED</b>
+                        <span>Inform your group or team of up to the minute and spontaneous plan changes using the BeClutch Alert feature and the BeClutch Reminder feature to be sure essential information is not forgotten.</span>
+                    </div>
+                    <div>
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <b>BE IN TOUCH</b>
+                        <span>With the BeClutch Roster feature all member contact information in one place making communication and coordination with group members convenient and easy.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 3: App Download -->
+        <div class="start-page-section start-page-section-3-1" id="app">
+            <div class="start-page-section-inner">
+                <div class="horizontal-bar" style="background: #a1af36;"></div>
+                <h2>Download the App</h2>
+                <p>Available on both iOS and Android.</p>
+                <div>
+                    <img src="https://placehold.co/250x400/505B1E/ffffff?text=App+Screenshot" alt="App Screenshot 1">
+                    <img src="https://placehold.co/250x400/7DB222/ffffff?text=App+Screenshot" alt="App Screenshot 2">
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Contact -->
+        <div class="start-page-section start-page-section-4-1" id="contact">
+            <div class="start-page-section-inner">
+                <div class="horizontal-bar"></div>
+                <h2>Contact Us</h2>
+                <form id="contact-form">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="text" name="email" placeholder="Email" required>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                    <textarea name="message" placeholder="Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                    <p id="contact-message" style="color: white; margin-top: 15px; display: none;">Thank you for your message!</p>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- SUPPORT PAGE CONTENT -->
+    <div id="page-support" class="page-content">
+        <div class="start-page-section-inner" style="background: white; padding-top: 20px;">
+            <h2 style="color:#555;">Support</h2>
+            
+            <h3 style="font-family: 'Arima Madurai', cursive;padding: 10px; font-size: 20px;margin-top: 10px; color: #555;">Contact support</h3>
+            <h3 style="font-family: 'Arima Madurai', cursive;padding: 10px; font-size: 20px; color: #555;">Email: support@beclutch.club</h3>
+                
+            <div style="margin-top: 10px; margin-bottom: 20px;">
+                <a href="#support-faq" class="button button-faq" data-target="faq">FAQ</a>
+                <a href="#support-troubleshooting" class="button button-faq" data-target="troubleshooting">Troubleshooting</a>
+                <a href="#support-instruction" class="button button-faq" data-target="guides">Guides</a>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="start-page-section" style="background: #F7F7F7; padding-bottom: 0px" id="support-faq">
+            <div class="start-page-section-inner">
+                <div class="horizontal-bar" style="background: #a1af36;"></div>
+                <h2 id="support-faq-h2" style="color: #555;">FAQ</h2>
+                
+                <button class="accordion">What is BeClutch?<span><img class="img-indicator"></span></button>
+                <div class="panel">
+                    <p>BeClutch! was designed with the sole purpose of providing a platform for businesses, clubs, and teams to communicate and organize all events and activities in one place.</p>
+                </div>
+
+                <button class="accordion">How do I start a group?<span><img class="img-indicator"></span></button>
+                <div class="panel">
+                    <p>Once registered, follow the steps in the Guides section to create and manage your group.</p>
+                </div>
+
+                <button class="accordion">Can I upload files to my group?<span><img class="img-indicator"></span></button>
+                <div class="panel">
+                    <p>Yes, the chat feature allows you to upload photos and documents to share with your members.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Troubleshooting Section -->
+        <div class="start-page-section" style="background: white; padding-bottom: 0px" id="support-troubleshooting">
+            <div class="start-page-section-inner">
+                <div class="horizontal-bar" style="background: #a1af36;"></div>
+                <h2 id="support-troubleshooting-h2" style="color: #555;">Troubleshooting</h2>
+                
+                <button class="accordion">I can't log in.<span><img class="img-indicator"></span></button>
+                <div class="panel">
+                    <p>Try resetting your password. Ensure you are using the email address the invitation was sent to in order for registration to be completed when joining a group/team.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Guides Section -->
+        <div class="start-page-section" style="background-color: #E4E4E6; padding-bottom: 0px" id="support-instruction">
+            <div class="start-page-section-inner">
+                <div class="horizontal-bar" style="background: #a1af36;"></div>
+                <h2 id="support-instruction-h2" style="color: #555;">Guides</h2>
+                <div style="margin-top: 20px;margin-bottom: 20px;">
+                    <span style="font-size: 20px;">Functionality Guides (Video Tutorials)</span>
+                </div>
+                <button class="accordion">Add to Roster<span><img class="img-indicator"></span> </button>
+                <div class="panel">
+                    <video width="100%" controls>
+                      <source src="https://example.com/video/add_to_roster.mp4" type="video/mp4">
+                      Your browser does not support HTML video. (Placeholder Video)
+                    </video>
+                </div>
+                <button class="accordion">Create an Event<span><img class="img-indicator"></span> </button>
+                <div class="panel">
+                    <p>This is where the 'Create an Event' video tutorial would be embedded.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- UPGRADE PAGE CONTENT -->
+    <div id="page-upgrade" class="page-content">
+        <div class="start-page-section" style="background: #6A912B; padding-bottom: 50px" id="upgrade-content">
+            <div class="start-page-section-inner">
+                <div class="horizontal-bar"></div>
+                <h2 style="color: #fff; text-align: center;">Upgrade to Premium</h2>
+                
+                <div class="upgrade-callout">
+                    <h3>Unlock Advanced Group Management Features</h3>
+                    <p>Click Upgrade to access features that will give you the ability to manage a group of any size with more ease and efficiency!</p>
+                    <a href="#" class="upgrade-button" onclick="return false;">Upgrade Now</a>
+                    <p style="color: #555; margin-top: 15px;">$59.99 billed annually ($4.99/month)</p>
+                </div>
+                
+                <h3 style="color: #fff; font-size: 24px; margin-bottom: 15px;">Premium Features:</h3>
+
+                <button class="accordion">Unlimited Roster Members<span><img class="img-indicator"></span> </button>
+                <div class="panel">
+                    <p>Add unlimited roster members to your group.</p>
+                </div>
+
+                <button class="accordion">Surveys<span><img class="img-indicator"></span></button>
+                <div class="panel">
+                    <p>Send out surveys to gather information about individual availability and preferences.</p>
+                </div>
+
+                <button class="accordion">Notifications<span><img class="img-indicator"></span></button>
+                <div class="panel">
+                    <p>Receive Notifications for items created, edited and/or canceled including Events, Surveys, Fees and Roster updates. Email distribution lists for member sign up, reminders are sent out to encourage participation.</p>
+                </div>
+
+                <button class="accordion">Reminders<span><img class="img-indicator"></span></button>
+                <div class="panel">
+                    <p>Send out Reminders so that essential information will not be missed or forgotten.</p>
+                </div>
+
+                <button class="accordion">Carpool<span><img class="img-indicator"></span></button>
+                <div class="panel">
+                    <p>With one touch alert your group that you need a ride to an event.</p>
+                </div>
+
+                <button class="accordion">Alerts<span><img class="img-indicator"></span></button>
+                <div class="panel">
+                    <p>Inform your group or team of up to the minute and spontaneous plan changes.</p>
+                </div>
+
+                <button class="accordion">Premium Support<span><img class="img-indicator"></span></button>
+                <div class="panel">
+                    <p>Response time for assistance within 12 hours.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div> <!-- End Main Content Container -->
+
+<!-- Footer -->
+<div id="footer">
+    <div id="footer-inner">
+        &copy; 2025 BeClutch. All Rights Reserved. | <a href="#" data-page-id="support">Support</a>
+    </div>
+</div>
+
+
+<script>
+    // --- Page Routing and Initialization ---
+    // Simple state to manage the active page
+    let activePageId = 'home';
+    
+    // Function to show the correct page and hide others
+    function showPage(pageId, anchor = null) {
+        $('.page-content').removeClass('active');
+        const $targetPage = $('#page-' + pageId);
+        $targetPage.addClass('active');
+        activePageId = pageId;
+
+        // Scroll to the top of the page content
+        $('html, body').scrollTop(0);
+
+        // If an anchor is specified, scroll to it
+        if (anchor) {
+            // Wait briefly for the content to render before scrolling
+            setTimeout(() => {
+                const $targetAnchor = $('#' + anchor);
+                if ($targetAnchor.length) {
+                    // Offset for fixed header (approx 70px)
+                    $('html, body').animate({
+                        scrollTop: $targetAnchor.offset().top - 70
+                    }, 500);
+                }
+            }, 50);
+        }
+    }
+
+    // Handle initial load and navigation clicks
+    $(function() {
+        // Initial page load (always show home)
+        showPage('home');
+
+        // Handle header menu and responsive menu clicks
+        $('a[data-page-id], .header-logo').on('click', function(e) {
+            e.preventDefault();
+            const pageId = $(this).data('page-id');
+            const anchor = $(this).data('anchor');
+            
+            showPage(pageId, anchor);
+            
+            // Close mobile menu
+            $('#header-responsive side').slideUp();
+        });
+
+        // Handle mobile menu toggle
+        $('#header-responsive > div').on('click', function() {
+            $('#header-responsive side').slideToggle();
+        });
+        
+        // --- Component Logic: Accordions ---
+        var acc = document.getElementsByClassName("accordion");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].onclick = function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight){
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            }
+        }
+        
+        // --- Component Logic: Contact Form ---
+        $("#contact-form").on('submit', function(e) {
+            e.preventDefault();
+            let contains_errors = false;
+            
+            // Reset errors
+            $("#contact-form input, #contact-form textarea").removeClass("error");
+
+            // Validate text fields
+            $("#contact-form").find("input[type='text'], textarea").each(function () {
+                if ($(this).val().length < 3) {
+                    $(this).addClass("error");
+                    contains_errors = true;
+                }
+            });
+
+            // Validate email
+            var email = $("#contact-form").find("input[name='email']").val();
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if (!re.test(email)) {
+                $("#contact-form").find("input[name='email']").addClass("error");
+                contains_errors = true;
+            }
+
+            if (!contains_errors) {
+                // Simulate form submission success
+                $("#contact-message").text("Thank you for contacting us! We will get back to you shortly.").show();
+                $("#contact-form")[0].reset();
+                setTimeout(() => {
+                    $("#contact-message").fadeOut();
+                }, 5000);
+            }
+        });
+        
+        // --- Component Logic: Scroll to Top Button ---
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('#scroll-top-button').fadeIn();
+            } else {
+                $('#scroll-top-button').fadeOut();
+            }
+        });
+
+        $('#scroll-top-button').on('click', function() {
+            $('html, body').animate({scrollTop : 0}, 600);
+            return false;
+        });
+
+    });
+</script>
+</body>
+</html>

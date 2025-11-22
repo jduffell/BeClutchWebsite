@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeClutch Camps - About Us</title>
+    <style>
+        /* --- [1] GLOBAL STYLES & VARIABLES (Copied for consistency) --- */
+        :root {
+            --color-primary-dark: #1F4C1D;  
+            --color-primary-light: #7FB522; 
+            --color-accent: #396896;        
+            
+            --color-dark: #222B33;       
+            --color-gray: #6C757D;       
+            --color-light-gray: #f8f9fa;  
+            --color-white: #ffffff;
+            
+            --font-family: Helvetica, Arial, sans-serif;
+            --font-size: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--color-dark);
+            line-height: 1.6;
+            font-size: var(--font-size);
+            background-color: var(--color-white); 
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3, h4 {
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: var(--color-dark);
+        }
+
+        h1 { font-size: 3.2rem; }
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 1.5rem; }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        section {
+            padding: 6rem 0;
+        }
+        
+        /* --- [2] BUTTONS & LINKS --- */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: var(--color-primary-dark);
+            color: var(--color-white);
+            border: 2px solid var(--color-primary-dark);
+        }
+        .btn-primary:hover {
+            background-color: #173b15; 
+            border-color: #173b15;
+        }
+
+        /* --- [3] NAVIGATION BAR (Copied for consistency) --- */
+        .nav-bar {
+            background-color: var(--color-white);
+            padding: 1rem 0;
+            border-bottom: 1px solid #e9ecef;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .nav-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 50px; 
+            width: auto;
+            vertical-align: middle;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--color-gray);
+            font-weight: 600;
+        }
+        .nav-menu a:hover {
+            color: var(--color-primary-dark);
+        }
+
+        .nav-menu .current-page a {
+            color: var(--color-primary-dark);
+            font-weight: 700;
+        }
+        
+        /* --- [4] ABOUT CONTENT --- */
+        .about-header {
+            background-color: var(--color-light-gray);
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+        
+        .about-content {
+            padding: 4rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: flex-start;
+        }
+        
+        .story-box {
+            background-color: var(--color-accent);
+            color: var(--color-white);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        .story-box h3 {
+             color: var(--color-white);
+             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+             padding-bottom: 1rem;
+             margin-bottom: 1.5rem;
+        }
+        .story-box p {
+             font-size: 1.1rem;
+        }
+        
+        .vision-list {
+            list-style: none;
+            padding: 0;
+        }
+        .vision-list li {
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        .vision-list li span {
+            color: var(--color-gray);
+            font-weight: 400;
+            display: block;
+            margin-top: 0.2rem;
+            font-size: 1rem;
+        }
+
+        /* --- [5] CALL TO ACTION --- */
+        .about-cta {
+            background-color: var(--color-primary-dark);
+            color: var(--color-white);
+            text-align: center;
+            padding: 4rem 0;
+        }
+        .about-cta h2 {
+             color: var(--color-white);
+             margin-bottom: 2rem;
+        }
+        
+        /* --- [6] FOOTER (Copied for consistency) --- */
+        .footer {
+            background-color: var(--color-dark);
+            color: var(--color-white);
+            padding: 4rem 0;
+        }
+        
+        .footer .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .footer-logo img {
+            height: 60px; 
+            width: auto;
+            margin-bottom: 1rem;
+        }
+        
+        .footer p {
+            color: var(--color-gray);
+        }
+        
+        .footer-links h4 {
+            color: var(--color-white);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+             margin-bottom: 0.5rem;
+        }
+        
+        .footer-links ul a {
+            text-decoration: none;
+            color: var(--color-gray);
+        }
+        .footer-links ul a:hover {
+            color: var(--color-white);
+        }
+
+
+        /* --- [7] RESPONSIVE (MOBILE) STYLES --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            section { padding: 3rem 0; }
+            
+            .nav-menu {
+                display: none; 
+            }
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            .footer .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+        
+        /* --- [8] MODAL STYLES (Copied for consistency) --- */
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 2000; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6); 
+        }
+
+        .modal-content {
+            background-color: var(--color-white);
+            margin: 10% auto; 
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .close-btn {
+            color: var(--color-gray);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: var(--color-dark);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-content h3 {
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .modal-form input[type="text"],
+        .modal-form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .modal-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        .modal-form button {
+            width: 100%;
+            border: none;
+            padding: 12px;
+            background-color: var(--color-primary-dark);
+            color: white;
+            border-radius: 4px;
+            font-size: 1.1rem;
+        }
+        @media (max-width: 600px) {
+            .modal-content {
+                margin: 5% auto;
+            }
+        }
+    </style>
+    <script>
+        // Modal functions (must be copied to ALL pages: index.html, pricing.html, about.html)
+        function openModal() {
+            document.getElementById('demoModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('demoModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('demoModal')) {
+                closeModal();
+            }
+        }
+
+        function submitForm() {
+            const name = document.getElementById('modalName').value;
+            const email = document.getElementById('modalEmail').value;
+            const message = document.getElementById('modalMessage').value;
+            
+            // Construct the mailto link
+            const subject = 'Demo Request from Website - ' + name;
+            const body = 'Name: ' + name + '\nEmail: ' + email + '\n\nMessage: ' + message;
+            
+            const mailtoLink = 'mailto:support@beclutch.club?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            
+            // Open the mailto link
+            window.location.href = mailtoLink;
+
+            // Display a confirmation message and close the modal
+            alert('Thank you, ' + name + '! Your demo request has been prepared for your email client. Please click Send in your email program to complete the request.');
+            closeModal();
+            
+            return false; // Prevent traditional form submission
+        }
+    </script>
+</head>
+<body>
+
+    <header class="nav-bar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <img src="img/BeClutchLogo.png" alt="BeClutch Logo">
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li class="current-page"><a href="about.html">About Us</a></li>
+                <li><a onclick="openModal()" class="btn btn-primary">Schedule a Demo</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-header">
+            <div class="container">
+                <h1>Our Story: Built for Sports, Perfected for Camps.</h1>
+                <p>We are dedicated to providing registration and management solutions that truly understand the unique needs of recreation departments.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container about-content">
+                <div class="mission">
+                    <h2>Our Mission is Simple: Eliminate Friction.</h2>
+                    <p>BeClutch originally developed sports management software, but a few years ago, we recognized a critical need: local camps and recreation departments were severely underserved.</p>
+                    <p>Many software vendors failed to handle the volume and complexity of camp registration spikes. They lacked the flexibility for custom reports required by treasury departments and often forced clients into limited payment processors.</p>
+                    <p>We built BeClutch Camps to be the specialized solution. We offer the stability and high-volume capacity of a robust system with the customizability and financial flexibility that our clients require.</p>
+                    
+                    <h3 style="margin-top: 3rem;">What Makes Us Different?</h3>
+                    <ul class="vision-list">
+                        <li>**Proven Infrastructure** <span>Our AWS-powered system is built to handle massive registration volume without crashing on launch day.</span>
+                        </li>
+                        <li>**Financial Partnership**
+                            <span>We adapt to your accounting needs, not the other way around. We offer custom reconciliation reports and flexible processor integration.</span>
+                        </li>
+                        <li>**Customer Service**
+                            <span>We pride ourselves on providing top notch customer service to ensure a seamless transition to our platform. Your success is our sole priority.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="story-box">
+                    <h3>A Message from the Team</h3>
+                    <p>“We heard repeatedly that existing systems were too rigid, too slow, and caused unnecessary headaches between the camp staff and the finance department.</p>
+                    <p>Our goal wasn't just to make registration easier for parents—it was to make the entire financial reconciliation process seamless for the Treasurer. That focus is why BeClutch Camps is different, and why we consistently hear that clients are happier after moving from older, clunkier systems or paper registrations.”</p>
+                    <p style="text-align: right; margin-top: 2rem; font-style: italic;">– The BeClutch Development Team</p>
+                    
+                    <h3 style="margin-top: 3rem;">Ready to See the Difference?</h3>
+                    <a onclick="openModal()" class="btn btn-primary">Schedule a Demo</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="about-cta">
+            <div class="container">
+                <h2>Ready for High-Volume, Headache-Free Registration?</h2>
+                <p>Contact us today and see how our system outperforms the competition.</p>
+                <a onclick="openModal()" class="btn btn-primary" style="background-color: var(--color-primary-light); border-color: var(--color-primary-light);">Get Started Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">
+                    <img src="img/BeClutchLogo.png" alt="BeClutch Logo">
+                </a>
+                <p>© 2025 BeClutch. All rights reserved. <br> Built for Parks & Rec.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a onclick="openModal()">Schedule Demo</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="demoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3>Schedule Your Demo</h3>
+            <p>Tell us a little about your camp so we can tailor the demo to your needs.</p>
+            <form onsubmit="return submitForm()">
+                <div class="modal-form">
+                    <label for="modalName">Your Name (Required)</label>
+                    <input type="text" id="modalName" required>
+
+                    <label for="modalEmail">Work Email (Required)</label>
+                    <input type="email" id="modalEmail" required>
+
+                    <label for="modalMessage">Your Organization (Required)</label>
+                    <textarea id="modalMessage" rows="3" placeholder="ABC Camp"></textarea>
+
+                    <button type="submit">Send Demo Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

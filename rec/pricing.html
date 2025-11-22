@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeClutch Camps - Pricing</title>
+    <style>
+        /* --- [1] GLOBAL STYLES & VARIABLES (Copied from Home Page for consistency) --- */
+        :root {
+            /* --- BRAND COLORS --- */
+            --color-primary-dark: #1F4C1D;  
+            --color-primary-light: #7FB522; 
+            --color-accent: #396896;        
+            
+            --color-dark: #222B33;       
+            --color-gray: #6C757D;       
+            --color-light-gray: #f8f9fa;  
+            --color-white: #ffffff;
+            
+            /* --- TYPOGRAPHY --- */
+            --font-family: Helvetica, Arial, sans-serif;
+            --font-size: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--color-dark);
+            line-height: 1.6;
+            font-size: var(--font-size);
+            background-color: var(--color-light-gray);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3, h4 {
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: var(--color-dark);
+        }
+
+        h1 { font-size: 3.2rem; }
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 1.5rem; }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        section {
+            padding: 6rem 0;
+        }
+        
+        /* --- [2] BUTTONS & LINKS --- */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: var(--color-primary-dark);
+            color: var(--color-white);
+            border: 2px solid var(--color-primary-dark);
+        }
+        .btn-primary:hover {
+            background-color: #173b15; 
+            border-color: #173b15;
+        }
+        .btn-secondary-dark {
+            background-color: transparent;
+            color: var(--color-primary-dark);
+            border: 2px solid var(--color-primary-dark);
+        }
+        .btn-secondary-dark:hover {
+            background-color: var(--color-primary-dark);
+            color: var(--color-white);
+        }
+
+        /* --- [3] NAVIGATION BAR (Copied from Home Page) --- */
+        .nav-bar {
+            background-color: var(--color-white);
+            padding: 1rem 0;
+            border-bottom: 1px solid #e9ecef;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .nav-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 50px; 
+            width: auto;
+            vertical-align: middle;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--color-gray);
+            font-weight: 600;
+        }
+        .nav-menu a:hover {
+            color: var(--color-primary-dark);
+        }
+
+        /* Highlight current page in nav */
+        .nav-menu .current-page a {
+            color: var(--color-primary-dark);
+            font-weight: 700;
+        }
+
+        /* --- [4] PRICING HEADER --- */
+        .pricing-header {
+            text-align: center;
+            padding-bottom: 3rem;
+        }
+        .pricing-header h1 {
+            color: var(--color-dark);
+        }
+
+        /* --- [5] PRICING GRID --- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            align-items: stretch;
+            margin-bottom: 3rem;
+        }
+
+        .price-card {
+            background-color: var(--color-white);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+        .price-card:hover {
+             transform: translateY(-8px);
+        }
+        .price-card-popular {
+            border: 3px solid var(--color-accent);
+        }
+
+        .card-tag {
+            background-color: var(--color-accent);
+            color: var(--color-white);
+            font-weight: 700;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.9rem;
+        }
+
+        .price-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-accent);
+        }
+        .price-card .price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--color-dark);
+        }
+        .price-card .price-detail {
+            color: var(--color-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        .price-card .org-size {
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-bottom: 1.5rem;
+        }
+        .price-card .btn {
+            margin-top: 2rem;
+            width: 100%;
+        }
+
+        /* --- [6] FEATURE COMPARISON --- */
+        .features-comparison h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .feature-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 1.1rem;
+        }
+        .feature-item svg {
+            width: 20px;
+            height: 20px;
+            color: var(--color-primary-dark);
+            margin-right: 0.5rem;
+            fill: currentColor;
+        }
+        .feature-item strong {
+             display: flex;
+             align-items: center;
+        }
+        
+        .feature-explanation {
+            background-color: var(--color-white);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 3rem;
+        }
+        .feature-explanation h3 {
+             color: var(--color-primary-dark);
+        }
+        
+        /* --- [7] FAQ --- */
+        .faq-section {
+            padding: 4rem 0;
+            background-color: var(--color-white);
+            border-top: 1px solid #dee2e6;
+        }
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .faq-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .faq-item h4 {
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            color: var(--color-accent);
+        }
+        .faq-item p {
+            color: var(--color-gray);
+            margin-top: 0.5rem;
+            padding-left: 1rem;
+        }
+
+
+        /* --- [8] FOOTER (Copied from Home Page) --- */
+        .footer {
+            background-color: var(--color-dark);
+            color: var(--color-white);
+            padding: 4rem 0;
+        }
+        
+        .footer .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .footer-logo img {
+            height: 60px; 
+            width: auto;
+            margin-bottom: 1rem;
+        }
+        
+        .footer p {
+            color: var(--color-gray);
+        }
+        
+        .footer-links h4 {
+            color: var(--color-white);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+             margin-bottom: 0.5rem;
+        }
+        
+        .footer-links ul a {
+            text-decoration: none;
+            color: var(--color-gray);
+        }
+        .footer-links ul a:hover {
+            color: var(--color-white);
+        }
+
+
+        /* --- [9] RESPONSIVE (MOBILE) STYLES --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            section { padding: 4rem 0; }
+            
+            .nav-menu {
+                display: none; 
+            }
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+        
+        /* --- [12] MODAL STYLES (Copied from Home Page) --- */
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 2000; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6); 
+        }
+
+        .modal-content {
+            background-color: var(--color-white);
+            margin: 10% auto; 
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .close-btn {
+            color: var(--color-gray);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: var(--color-dark);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-content h3 {
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .modal-form input[type="text"],
+        .modal-form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .modal-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        .modal-form button {
+            width: 100%;
+            border: none;
+            padding: 12px;
+            background-color: var(--color-primary-dark);
+            color: white;
+            border-radius: 4px;
+            font-size: 1.1rem;
+        }
+        @media (max-width: 600px) {
+            .modal-content {
+                margin: 5% auto;
+            }
+        }
+    </style>
+    <script>
+        // Modal functions (must be copied to ALL pages: index.html, pricing.html, about.html)
+        function openModal() {
+            document.getElementById('demoModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('demoModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('demoModal')) {
+                closeModal();
+            }
+        }
+
+        function submitForm() {
+            const name = document.getElementById('modalName').value;
+            const email = document.getElementById('modalEmail').value;
+            const message = document.getElementById('modalMessage').value;
+            
+            // Construct the mailto link
+            const subject = 'Demo Request from Website - ' + name;
+            const body = 'Name: ' + name + '\nEmail: ' + email + '\n\nMessage: ' + message;
+            
+            const mailtoLink = 'mailto:support@beclutch.club?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            
+            // Open the mailto link
+            window.location.href = mailtoLink;
+
+            // Display a confirmation message and close the modal
+            alert('Thank you, ' + name + '! Your demo request has been prepared for your email client. Please click Send in your email program to complete the request.');
+            closeModal();
+            
+            return false; // Prevent traditional form submission
+        }
+    </script>
+</head>
+<body>
+
+    <header class="nav-bar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <img src="img/BeClutchLogo.png" alt="BeClutch Logo">
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html#features">Features</a></li>
+                <li class="current-page"><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a onclick="openModal()" class="btn btn-primary">Schedule a Demo</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="pricing">
+            <div class="container">
+                <div class="pricing-header">
+                    <h1>Simple, Transparent Pricing.</h1>
+                    <p>One affordable annual fee. **No transaction fees, ever.** Switch from expensive competitors today.</p>
+                </div>
+
+                <div class="pricing-grid">
+                    
+                    <div class="price-card">
+                        <div>
+                            <h3>Essential</h3>
+                            <div class="price">$2,000</div>
+                            <div class="price-detail">billed annually</div>
+                            <div class="org-size">**Ideal for Small Camps** (Up to 2,500 Campers)</div>
+                        </div>
+                        <a onclick="openModal()" class="btn btn-secondary-dark">Get Started</a>
+                    </div>
+                    
+                    <div class="price-card price-card-popular">
+                        <div class="card-tag">MOST POPULAR</div>
+                        <div>
+                            <h3>Pro</h3>
+                            <div class="price">$2,400</div>
+                            <div class="price-detail">billed annually</div>
+                            <div class="org-size">**Best for Growing Camps** (Up to 10,000 Campers)</div>
+                        </div>
+                         <a onclick="openModal()" class="btn btn-primary">Get Started</a>
+                    </div>
+
+                    <div class="price-card">
+                        <div>
+                            <h3>Enterprise</h3>
+                            <div class="price">$2,800</div>
+                            <div class="price-detail">billed annually</div>
+                            <div class="org-size">**For Large Camps** (10,000+ Campers)</div>
+                        </div>
+                        <a onclick="openModal()" class="btn btn-secondary-dark">Get Started</a>
+                    </div>
+
+                </div>
+
+                <div class="features-comparison">
+                    <h2>Everything Is Included.</h2>
+                    <p class="text-center" style="text-align:center; max-width: 700px; margin: 0 auto 2rem auto; color: var(--color-gray);">Unlike other systems that charge per module or per user, every BeClutch plan gives you access to our entire platform. The only difference is the size of your organization.</p>
+
+                    <div class="feature-explanation">
+                        <div class="feature-item">
+                            <strong><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.38-1.8a.75.75 0 1 0-1.06-1.06L10.94 12.88l-1.82-1.82a.75.75 0 0 0-1.06 1.06l2.35 2.35a.75.75 0 0 0 1.06 0l4.24-4.24Z" clip-rule="evenodd" /></svg>Custom Reconciliation Reports</strong><span>Included in All Plans</span>
+                        </div>
+                        <div class="feature-item">
+                            <strong><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.38-1.8a.75.75 0 1 0-1.06-1.06L10.94 12.88l-1.82-1.82a.75.75 0 0 0-1.06 1.06l2.35 2.35a.75.75 0 0 0 1.06 0l4.24-4.24Z" clip-rule="evenodd" /></svg>Unlimited Registrations & Programs</strong><span>Included in All Plans</span>
+                        </div>
+                        <div class="feature-item">
+                            <strong><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.38-1.8a.75.75 0 1 0-1.06-1.06L10.94 12.88l-1.82-1.82a.75.75 0 0 0-1.06 1.06l2.35 2.35a.75.75 0 0 0 1.06 0l4.24-4.24Z" clip-rule="evenodd" /></svg>Full Custom Registration Form Builder</strong><span>Included in All Plans</span>
+                        </div>
+                        <div class="feature-item">
+                            <strong><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.38-1.8a.75.75 0 1 0-1.06-1.06L10.94 12.88l-1.82-1.82a.75.75 0 0 0-1.06 1.06l2.35 2.35a.75.75 0 0 0 1.06 0l4.24-4.24Z" clip-rule="evenodd" /></svg>Discount Code Engine (Sibling, Early Bird, etc.)</strong><span>Included in All Plans</span>
+                        </div>
+                        <div class="feature-item">
+                            <strong><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.38-1.8a.75.75 0 1 0-1.06-1.06L10.94 12.88l-1.82-1.82a.75.75 0 0 0-1.06 1.06l2.35 2.35a.75.75 0 0 0 1.06 0l4.24-4.24Z" clip-rule="evenodd" /></svg>Mobile App Communication (Email/SMS*/Push)</strong><span>Included in All Plans</span>
+                        </div>
+
+                        <div class="feature-explanation">
+                            <h3>A Note on Payment Processors:</h3>
+                            <p>You have the flexibility to choose your own payment provider. You can use our integrated solution, or we will connect with your existing third-party processor for a simple, one-time integration fee.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h4>Do you charge transaction fees or service fees?</h4>
+                        <p>No. We charge one flat annual subscription fee. We never take a percentage of your registration revenue or charge extra per transaction. We keep your budget predictable.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>What happens if my camp grows past my current plan's camper limit?</h4>
+                        <p>We believe in partnership. We will contact you to discuss moving to the next tier for your next contract cycle. We will never cut off service or charge unexpected fees.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>How long does it take to implement BeClutch Camps?</h4>
+                        <p>Our average implementation time is between 1-2 weeks, depending on the complexity of your custom reports and any external payment processor integration requests. We handle the heavy lifting for you.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Do you have unlimited SMS messages as part of your annual fee?</h4>
+                        <p>We provide an SMS interface as part of all our tiers. Over 1,000 SMS messages requires additional billing from a 3rd party partner</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">
+                    <img src="img/BeClutchLogo.png" alt="BeClutch Logo">
+                </a>
+                <p>© 2025 BeClutch. All rights reserved. <br> Built for Parks & Rec.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a onclick="openModal()">Schedule Demo</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="demoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3>Schedule Your Demo</h3>
+            <p>Tell us a little about your camp so we can tailor the demo to your needs.</p>
+            <form onsubmit="return submitForm()">
+                <div class="modal-form">
+                    <label for="modalName">Your Name (Required)</label>
+                    <input type="text" id="modalName" required>
+
+                    <label for="modalEmail">Work Email (Required)</label>
+                    <input type="email" id="modalEmail" required>
+
+                    <label for="modalMessage">Your Organization (Optional)</label>
+                    <textarea id="modalMessage" rows="3" placeholder="Town of Smithville Recreation"></textarea>
+
+                    <button type="submit">Send Demo Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<style>
+	#header-sub {
+
+		position: absolute;
+
+	}
+</style>
+
+<head>
+	<title>BeClutch!</title>
+	<meta name="facebook-domain-verification" content="ichbh0l9c0m07z0ktlzakz913ax85r" />
+</head>
+
+<div class="start-page-section" style="background-color: #7FB522">
+
+	<div class="start-page-section-1-1">
+
+
+		<div class="start-page-section-inner">
+			<div class='app'>
+
+		//		<a href="https://apps.apple.com/us/app/id1501441735" target="_blank"><img src="/img/app-download-ios.png"></a>
+
+		//		<a href="https://play.google.com/store/apps/details?id=com.rock.beclutch" target="_blank"><img src="/img/app-download-android.png"></a>
+
+			</div>
+			<div class='slogan'>
+
+				<h2></h2>
+
+				<span>
+
+					
+
+				</span>
+
+			</div>
+
+
+
+		</div>
+
+	</div>
+
+
+
+	<div class="start-page-section-1-2 start-page-section-inner" id="features">
+
+		<div>
+
+			<i class="fa fa-comments"></i>
+
+			<b>COMMUNICATE</b>
+
+			<span>Use the BeClutch Chat feature for real time communication between group members. </span>
+
+		</div>
+
+		<div>
+
+			<i class="fa fa-calendar" aria-hidden="true"></i>
+
+			<b>PLAN AHEAD</b>
+
+			<span>Schedule with BeClutch Calendar. Set availability, receive reminders and request a carpool.</span>
+
+		</div>
+
+		<div>
+
+			<i class="fa fa-dollar" aria-hidden="true"></i>
+
+			<b>MANAGE FINANCES</b>
+
+			<span>Member payments in App for seamless management of funds and budgets with BeClutch Finance.</span>
+
+		</div>
+
+		<div>
+
+			<i class="fa fa-list" aria-hidden="true"></i>
+
+			<b>TAKE SURVEYS</b>
+
+			<span>Gather information about individual availability and preferences by using the BeClutch Survey feature.</span>
+
+		</div>
+
+	</div>
+	<div class="start-page-section-1-2 start-page-section-inner">
+
+		<div>
+
+			<i class="fas fa-user-check" aria-hidden="true"></i>
+
+			<b>STAY INFORMED</b>
+
+			<span>With BeClutch Attendance know who will be attending an event and who attended past events. </span>
+
+		</div>
+
+		<div>
+
+			<i class="fa fa-paint-brush"></i>
+
+			<b>MAKE IT PERSONAL</b>
+
+			<span>Use the BeClutch Themes feature to assign the colors and logo that represent your organization.</span>
+
+		</div>
+
+		<div>
+
+			<i class="fa fa-bell" aria-hidden="true"></i>
+
+			<b>BE PREPARED</b>
+
+			<span> Inform your group of spontaneous plan changes using the BeClutch Alert feature.</span>
+
+		</div>
+
+		<div>
+
+			<i class="fa fa-users" aria-hidden="true"></i>
+
+			<b>BE IN TOUCH</b>
+
+			<span>BeClutch Roster holds contact information in one place making contact with group members a breeze.</span>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+<div class="start-page-section-4-1 start-page-section" id="app" style="background-color: #1C6C9B">
+
+	<div class="start-page-section-inner">
+
+		<h2 style="color:#fff">App - iOS & Android</h2>
+
+
+
+		<div class="text-half-cont" style="color:#fff">
+
+			<div>
+
+				BeClutch was designed with the sole purpose of providing a platform for businesses, clubs and teams to communicate and meet all the needs of a group of any size.
+
+			</div>
+
+			<div>
+
+				Download the BeClutch app for free from the App store or Google play store and choose the bundle that fits your organizational needs.
+
+			</div>
+
+		</div>
+
+
+
+		<side>
+
+			<a href="https://apps.apple.com/us/app/id1501441735" target="_blank"><img src="/img/app-download-ios.png"></a>
+
+			<a href="https://play.google.com/store/apps/details?id=com.rock.beclutch" target="_blank"><img src="/img/app-download-android.png"></a>
+
+		</side>
+
+	</div>
+
+</div>
+
+
+<div class="start-page-section-5-1 start-page-section" id="contact">
+
+	<div class="start-page-section-inner">
+
+		<h2>Contact us</h2>
+
+
+
+		<div class="text-half-cont">
+
+			<div>
+
+				BeClutch launched in 2020 with the mission to help all types of organizations stay connected. At the workplace, at home, on the go, or wherever else you need to stay in touch and stay organized.
+
+			</div>
+
+			<div>
+
+				We encourage you to contact us at <a style="color:white" href="mailto:support@beclutch.club">support@beclutch.club</a> for launch dates, company announcements or any other general inquiries. <br>
+
+
+
+			</div>
+
+		</div>
+
+
+
+
+
+		<form id="contact-form">
+
+			<div>
+
+				<span>Name</span><input type="text" name="name">
+
+				<span>Email*</span><input type="text" required name="email">
+
+				<span>Subject</span><input type="text" name="subject">
+
+			</div>
+
+			<div>
+
+				<span>Message*</span><textarea required name="message"></textarea>
+
+			</div>
+
+			<div><a class="button">Send message</a></div>
+
+		</form>
+
+	</div>
+
+</div>
+
+
+<script>
+
+	$(function () {
+
+
+
+		// check if the normal form submit, intreprer
+
+		$("#contact-form").submit(function () { sendMessage(); })
+
+		$("#contact-form .button").click(function () {
+
+			sendMessage();
+
+			return false;
+
+		})
+
+
+
+
+
+		function sendMessage() {
+
+
+
+			var url = "/modules/site-functions.php?db_function=send-message";
+
+			var data = {
+
+				"name": $("#contact-form").find("input[type='text']").eq(0).val(),
+
+				"email": $("#contact-form").find("input[type='text']").eq(1).val(),
+
+				"subject": $("#contact-form").find("input[type='text']").eq(2).val(),
+
+				"message": $("#contact-form").find("textarea").eq(0).val()
+
+			}
+
+
+
+			// Validation
+
+			var contains_errors = false;
+
+			$("#contact-form").find("input[type='text']").each(function () {
+
+				if ($(this).val().length < 3) {
+
+					$(this).addClass("error");
+
+					contains_errors = true;
+
+				}
+
+			});
+
+
+
+			// Validate email
+
+			var email = $("#contact-form").find("input[type='text']").eq(1).val();
+
+			var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+			if (!re.test(email)) {
+
+				$("#contact-form").find("input[type='text']").eq(1).addClass("error");
+
+				contains_errors = true;
+
+			}
+
+			if (contains_errors) return false;
+
+
+
+			// Send
+
+			$.ajax({
+				url: url, data: data, success: function (result) {
+
+					switch (parseInt(result)) {
+
+						case 1: // Success
+
+							$("#contact-form").find("input[type='text']").each(function () {
+
+								$(this).val("");
+
+							});
+
+							$("#contact-form").find("input[type='textarea']").each(function () {
+
+								$(this).val("");
+
+							});
+
+							alert("Message sent!");
+
+							break;
+
+						case 2: // Fail (Unknown reason)
+
+							alert("Something went wrong..");
+
+							break;
+
+					}
+
+				}
+			});
+
+
+
+
+
+		}
+
+	});
+
+</script>

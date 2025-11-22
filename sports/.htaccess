@@ -1,0 +1,28 @@
+RewriteEngine On 
+RewriteCond %{HTTPS} off 
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+<IfModule mod_rewrite.c>
+
+        RewriteCond %{SERVER_PORT} 80 
+        RewriteRule ^(.*)$ https://beclutch.club/$1 [R=301,L,NE]
+
+        RewriteCond %{HTTPS} on
+        RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+        RewriteRule ^(.*)$ https://beclutch.club/$1 [R=301,L,NE]
+
+	# Redirects /touch/wifiinstall to /wifi-install
+	Redirect /touch/wifiinstall /wifi-install
+
+	# Redirect /index.php to / (optional, but recommended I guess)
+	RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*index\.php
+	RewriteRule ^index.php/?(.*)$ $1 [R=301,L]
+
+	# Run everything else but real files through index.php
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^(.*)$ index.php/$1?%{QUERY_STRING} [L]
+</IfModule>
+AddHandler cgi-script .cgi .pl .py
+RewriteCond %{HTTP_HOST} ^beclutch\.club$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.beclutch\.club$
+RewriteRule ^facebook$ "https\:\/\/apps\.apple\.com\/gb\/app\/beclutch\/id1501441735" [R=301,L]
