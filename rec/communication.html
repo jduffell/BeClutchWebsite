@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasury Information | BeClutch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        /* --- [1] GLOBAL STYLES & VARIABLES --- */
+        :root {
+            /* --- UPDATED BRAND COLORS --- */
+            --color-primary-dark: #1F4C1D;  /* Your Dark Green */
+            --color-primary-light: #7FB522; /* Your Bright Green */
+            --color-accent: #396896;        /* Your New Blue-Green */
+            
+            --color-dark: #222B33;       /* Standard Dark Text */
+            --color-gray: #6C757D;       
+            --color-light-gray: #f8f9fa;  
+            --color-white: #ffffff;
+            
+            /* --- TYPOGRAPHY --- */
+            --font-family: Helvetica, Arial, sans-serif;
+            --font-size: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--color-dark);
+            line-height: 1.6;
+            font-size: var(--font-size);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        h1 { font-size: 3.2rem; }
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 1.5rem; }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        section {
+            padding: 6rem 0;
+        }
+
+        /* --- [2] BUTTONS & LINKS --- */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: var(--color-primary-dark);
+            color: var(--color-white);
+            border: 2px solid var(--color-primary-dark);
+        }
+        .btn-primary:hover {
+            background-color: #173b15; /* Darker green */
+            border-color: #173b15;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-white);
+            border: 2px solid var(--color-white);
+        }
+        .btn-secondary:hover {
+            background-color: var(--color-white);
+            color: var(--color-primary-dark);
+        }
+        
+        .btn-secondary-dark {
+            background-color: transparent;
+            color: var(--color-primary-dark);
+            border: 2px solid var(--color-primary-dark);
+        }
+        .btn-secondary-dark:hover {
+            background-color: var(--color-primary-dark);
+            color: var(--color-white);
+        }
+
+        /* --- [3] NAVIGATION BAR --- */
+        .nav-bar {
+            background-color: var(--color-white);
+            padding: 1rem 0; 
+            border-bottom: 1px solid #e9ecef;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .nav-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 50px; 
+            width: auto;
+            vertical-align: middle;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--color-gray);
+            font-weight: 600;
+        }
+        .nav-menu a:hover {
+            color: var(--color-primary-dark);
+        }
+
+
+        /* --- [4] HERO SECTION (User Focus) --- */
+        .hero {
+            background-image: 
+                linear-gradient(rgba(34, 43, 51, 0.7), rgba(34, 43, 51, 0.7)),
+                url('img/hero-background.jpg');
+            
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh; 
+            display: flex;
+            align-items: center;
+            color: var(--color-white);
+            padding: 4rem 0;
+        }
+        
+        .hero-content {
+            /* --- WIDENED: 800px max-width for wider text --- */
+            max-width: 800px; 
+        }
+
+        .hero-content h1 {
+            color: var(--color-white);
+            font-weight: 800;
+            font-size: 3.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* --- [5] SOCIAL PROOF / TRUST BAR --- */
+        .trust-bar {
+            background-color: var(--color-light-gray);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .trust-bar p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-gray);
+            margin: 0;
+        }
+
+        /* --- [6] KEY ADVANTAGES (3-COLUMN) --- */
+        .advantages {
+            /* LIGHT GREEN BACKGROUND */
+            background-color: var(--color-primary-light);
+            color: var(--color-dark); 
+        }
+        
+        .advantages h2, .advantages h3 {
+             color: var(--color-dark);
+        }
+
+        .advantages .container {
+            text-align: center;
+        }
+        
+        .advantages h2 {
+             max-width: 600px;
+             margin-left: auto;
+             margin-right: auto;
+             margin-bottom: 3rem; 
+        }
+        
+        /* UPDATED: 6-BOX GRID LAYOUT */
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            text-align: left;
+            margin-top: 1rem;
+        }
+        
+        /* [MODIFIED] Card to be a Link and styled correctly */
+        .advantage-card {
+            display: block; /* Important for making the whole area clickable */
+            text-decoration: none; /* Remove underline from the link */
+            color: var(--color-dark); /* Ensure text color remains dark */
+            padding: 1.5rem;
+            background-color: var(--color-white); 
+            border-radius: 8px; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2); 
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-align: center; 
+            min-height: 250px;
+        }
+        
+        /* [MODIFIED] Dynamic highlight effect */
+        .advantage-card:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            cursor: pointer; /* Explicit cursor change for better UX */
+        }
+        
+        /* [MODIFIED] ICON STYLING for Font Awesome */
+        .advantage-card i {
+            font-size: 48px; 
+            color: var(--color-primary-dark); 
+            display: block; 
+            margin: 0 auto 1rem auto; 
+        }
+        
+        /* Keeping SVG rule just in case you mix and match elsewhere */
+        .advantage-card svg {
+            width: 50px;
+            height: 50px;
+            fill: none; 
+            stroke: var(--color-primary-dark); 
+            stroke-width: 1.5; 
+            color: var(--color-primary-dark); 
+            display: block; 
+            margin: 0 auto 1rem auto; 
+        }
+        
+        .advantage-card h3 {
+            color: var(--color-dark);
+            font-size: 1.3rem;
+        }
+        .advantage-card p {
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+
+        /* --- [7] FEATURE HIGHLIGHT (2-COLUMN) --- */
+        .feature-highlight {
+            background-color: var(--color-light-gray);
+        }
+        
+        .feature-highlight-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .feature-highlight-text .check-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-highlight-text .check-list li {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-highlight-text .check-list svg {
+            width: 24px;
+            height: 24px;
+            color: var(--color-primary-dark); 
+            margin-right: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .feature-highlight-visual img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* --- [8] MOBILE APP SECTION (NEW & REFINED) --- */
+        .mobile-app {
+            /* BLUE-GREEN BACKGROUND */
+            background-color: var(--color-accent); 
+            color: var(--color-white); 
+        }
+        
+        .mobile-app h2, .mobile-app p {
+            color: var(--color-white);
+        }
+
+        .mobile-app-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr; 
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .mobile-app .app-info .check-list li svg { 
+            width: 20px; 
+            height: 20px;
+            margin-right: 0.6rem;
+            color: var(--color-primary-light); 
+        }
+        .mobile-app .app-info .check-list li span {
+            color: var(--color-white);
+        }
+
+        .app-screenshot img {
+            width: 100%;
+            max-width: 380px; 
+            height: auto;
+            max-height: 550px; 
+            object-fit: contain; 
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
+        }
+        
+        .app-buttons {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .app-buttons img {
+            height: 50px; 
+            width: auto;
+        }
+        
+        .app-screenshot-placeholder {
+            display: none; 
+        }
+
+
+        /* --- [9] FINAL CTA --- */
+        .final-cta {
+            background-color: var(--color-light-gray);
+            text-align: center;
+        }
+
+        .final-cta .container {
+            max-width: 700px;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* --- [10] FOOTER --- */
+        .footer {
+            background-color: var(--color-dark);
+            color: var(--color-white);
+            padding: 4rem 0;
+        }
+        
+        .footer .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .footer-logo img {
+            height: 60px; 
+            width: auto;
+            margin-bottom: 1rem;
+        }
+        
+        .footer p {
+            color: var(--color-gray);
+        }
+        
+        .footer-links h4 {
+            color: var(--color-white);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+             margin-bottom: 0.5rem;
+        }
+        
+        .footer-links ul a {
+            text-decoration: none;
+            color: var(--color-gray);
+        }
+        .footer-links ul a:hover {
+            color: var(--color-white);
+        }
+
+
+        /* --- [11] RESPONSIVE (MOBILE) STYLES --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            section { padding: 4rem 0; }
+            
+            .nav-menu {
+                display: none; 
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .hero-buttons .btn {
+                text-align: center;
+            }
+
+            .advantages-grid, .feature-highlight-grid, .mobile-app-grid, .footer .container {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Order for mobile app section on small screens */
+            .mobile-app-grid > div:nth-child(1) { order: 2; } 
+            .mobile-app-grid > div:nth-child(2) { order: 1; margin-bottom: 2rem; } 
+
+            .app-buttons {
+                justify-content: center;
+            }
+        }
+
+        /* --- [12] MODAL STYLES --- */
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 2000; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6); 
+        }
+
+        .modal-content {
+            background-color: var(--color-white);
+            margin: 10% auto; 
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .close-btn {
+            color: var(--color-gray);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: var(--color-dark);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-content h3 {
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .modal-form input[type="text"],
+        .modal-form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .modal-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        .modal-form button {
+            width: 100%;
+            border: none;
+            padding: 12px;
+            background-color: var(--color-primary-dark);
+            color: white;
+            border-radius: 4px;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive styling for modal */
+        @media (max-width: 600px) {
+            .modal-content {
+                margin: 5% auto;
+            }
+        }
+    </style>
+    </head>
+<body>
+
+    <header class="nav-bar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <img src="img/BeClutchLogo.png" alt="BeClutch Logo">
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a onclick="openModal()" class="btn btn-primary">Schedule a Demo</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="content-image-wrapper" style="padding: 2rem 0;">
+            <div class="container">
+                <img src="img/communication-image.jpg" alt="Communication information content" style="width: 100%; height: auto; display: block;">
+            </div>
+        </section>
+
+        <section class="final-cta" id="demo" style="padding: 3rem 0; background-color: var(--color-light-gray);">
+            <div class="container">
+                <h2>Ready to see it in action?</h2>
+                <p>Schedule a 15-minute demo to see how BeClutch can solve your biggest registration challenges.</p>
+                <a onclick="openModal()" class="btn btn-primary">Schedule Your Demo</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">
+                    <img src="img/BeClutchLogo.png" alt="BeClutch Logo">
+                </a>
+                <p>© 2025 BeClutch. All rights reserved. <br> Built for Parks & Rec.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a onclick="openModal()">Schedule Demo</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div id="demoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3>Schedule Your Demo</h3>
+            <p>Tell us a little about your camp so we can tailor the demo to your needs.</p>
+            <form onsubmit="return submitForm()">
+                <div class="modal-form">
+                    <label for="modalName">Your Name (Required)</label>
+                    <input type="text" id="modalName" required>
+
+                    <label for="modalEmail">Work Email (Required)</label>
+                    <input type="email" id="modalEmail" required>
+
+                    <label for="modalMessage">Your Organization (Optional)</label>
+                    <textarea id="modalMessage" rows="3" placeholder=""></textarea>
+
+                    <button type="submit">Send Demo Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        // Modal functions
+        function openModal() {
+            document.getElementById('demoModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('demoModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('demoModal')) {
+                closeModal();
+            }
+        }
+
+        function submitForm() {
+            const name = document.getElementById('modalName').value;
+            const email = document.getElementById('modalEmail').value;
+            const message = document.getElementById('modalMessage').value;
+            
+            // Construct the mailto link
+            const subject = 'Demo Request from Website - ' + name;
+            const body = 'Name: ' + name + '\nEmail: ' + email + '\n\nMessage: ' + message;
+            
+            const mailtoLink = 'mailto:support@beclutch.club?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            
+            // Open the mailto link
+            window.location.href = mailtoLink;
+
+            // Display a confirmation message and close the modal
+            alert('Thank you, ' + name + '! Your demo request has been prepared for your email client. Please click Send in your email program to complete the request.');
+            closeModal();
+            
+            return false; // Prevent traditional form submission
+        }
+    </script>
+    </body>
+</html>

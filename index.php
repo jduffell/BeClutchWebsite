@@ -216,16 +216,16 @@
                             <div class="splash-box-banner" style="display: block; width: 100%; height: 90px; background-image: url('img/sports.png'); background-size: cover; background-position: center;"></div>
                             <div class="splash-box-text-cont" style="display: block; width: 100%; text-align: left; padding: 40px 30px; box-sizing: border-box;">
                                 <h3 style="text-align: center !important;">Team or Group Management</h3>
-                                <p style="text-align: left !important;">For club and town teams. Manage communication, scheduling, finances, and more.</p>
+                                <p style="text-align: left !important;">For clubs, teams, and groups. Manage communication, contacts, scheduling, finances, and much more.</p>
                             </div>
                         </a>
                     </div>
                     <div>
-                        <a href="/camps/" class="splash-box" style="display: block; text-align: left;">
+                        <a href="/rec/" class="splash-box" style="display: block; text-align: left;">
                             <div class="splash-box-banner" style="display: block; width: 100%; height: 90px; background-image: url('img/camps.png'); background-size: cover; background-position: center;"></div>
                             <div class="splash-box-text-cont" style="display: block; width: 100%; text-align: left; padding: 40px 30px; box-sizing: border-box;">
                                 <h3 style="text-align: center !important;">Towns & Camps</h3>
-                                <p style="text-align: left !important;">For Town Recreation Departments. Manage program registration, scheduling, and communication.</p>
+                                <p style="text-align: left !important;">For Town Recreation Departments and Day Camps. Manage program registration, scheduling, treasury and communication.</p>
                             </div>
                         </a>
                     </div>
