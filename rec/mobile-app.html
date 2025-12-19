@@ -3,8 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Treasury Information | BeClutch</title>
+    <title>BeClutch Mobile App - Staff & Counselor Management Tool</title>
+    <meta name="description" content="The BeClutch mobile app gives camp staff and counselors real-time access to rosters, check-in, emergency contacts, and parent communication. Available on iOS and Android.">
+    <meta name="keywords" content="camp mobile app, staff management app, counselor app, mobile registration, camp check-in app">
+    <meta name="author" content="BeClutch">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.beclutch.club/mobile-app.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.beclutch.club/mobile-app.html">
+    <meta property="og:title" content="BeClutch Mobile App - Camp Management on the Go">
+    <meta property="og:description" content="Real-time access to rosters, check-in, and emergency contacts for camp staff. Download iOS and Android app.">
+    <meta property="og:image" content="https://www.beclutch.club/img/app-screenshot.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.beclutch.club/mobile-app.html">
+    <meta property="twitter:title" content="BeClutch Mobile App">
+    <meta property="twitter:description" content="Real-time access to rosters, check-in, and emergency contacts for camp staff.">
+    <meta property="twitter:image" content="https://www.beclutch.club/img/app-screenshot.png">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     
     <style>
         /* --- [1] GLOBAL STYLES & VARIABLES --- */
@@ -627,18 +648,19 @@
             <span class="close-btn" onclick="closeModal()">&times;</span>
             <h3>Schedule Your Demo</h3>
             <p>Tell us a little about your camp so we can tailor the demo to your needs.</p>
-            <form onsubmit="return submitForm()">
+            <form id="demoForm">
                 <div class="modal-form">
                     <label for="modalName">Your Name (Required)</label>
-                    <input type="text" id="modalName" required>
+                    <input type="text" id="modalName" name="name" required>
 
                     <label for="modalEmail">Work Email (Required)</label>
-                    <input type="email" id="modalEmail" required>
+                    <input type="email" id="modalEmail" name="email" required>
 
-                    <label for="modalMessage">Your Organization (Optional)</label>
-                    <textarea id="modalMessage" rows="3" placeholder=""></textarea>
+                    <label for="modalOrganization">Your Organization (Optional)</label>
+                    <input type="text" id="modalOrganization" name="organization" placeholder="">
 
-                    <button type="submit">Send Demo Request</button>
+                    <button type="submit" id="submitBtn">Send Demo Request</button>
+                    <div id="formMessage" style="display:none; margin-top: 1rem; padding: 1rem; border-radius: 5px;"></div>
                 </div>
             </form>
         </div>
@@ -648,6 +670,7 @@
         // Modal functions
         function openModal() {
             document.getElementById('demoModal').style.display = 'block';
+            resetForm();
         }
 
         function closeModal() {
@@ -661,26 +684,70 @@
             }
         }
 
-        function submitForm() {
+        function resetForm() {
+            document.getElementById('demoForm').reset();
+            document.getElementById('formMessage').style.display = 'none';
+            document.getElementById('submitBtn').disabled = false;
+            document.getElementById('submitBtn').textContent = 'Send Demo Request';
+        }
+
+        // Handle form submission
+        document.getElementById('demoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
             const name = document.getElementById('modalName').value;
             const email = document.getElementById('modalEmail').value;
-            const message = document.getElementById('modalMessage').value;
+            const organization = document.getElementById('modalOrganization').value;
+            const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('formMessage');
             
-            // Construct the mailto link
-            const subject = 'Demo Request from Website - ' + name;
-            const body = 'Name: ' + name + '\nEmail: ' + email + '\n\nMessage: ' + message;
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
             
-            const mailtoLink = 'mailto:support@beclutch.club?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            // Prepare form data
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('organization', organization);
             
-            // Open the mailto link
-            window.location.href = mailtoLink;
-
-            // Display a confirmation message and close the modal
-            alert('Thank you, ' + name + '! Your demo request has been prepared for your email client. Please click Send in your email program to complete the request.');
-            closeModal();
-            
-            return false; // Prevent traditional form submission
-        }
+            // Send to server
+            fetch('submit-demo.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    formMessage.style.display = 'block';
+                    formMessage.style.backgroundColor = '#d4edda';
+                    formMessage.style.color = '#155724';
+                    formMessage.style.borderLeft = '4px solid #155724';
+                    formMessage.textContent = 'Thank you, ' + name + '! Your demo request has been sent. We\'ll be in touch soon.';
+                    setTimeout(function() {
+                        closeModal();
+                        resetForm();
+                    }, 3000);
+                } else {
+                    formMessage.style.display = 'block';
+                    formMessage.style.backgroundColor = '#f8d7da';
+                    formMessage.style.color = '#721c24';
+                    formMessage.style.borderLeft = '4px solid #721c24';
+                    formMessage.textContent = 'Error: ' + data.message;
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Demo Request';
+                }
+            })
+            .catch(error => {
+                formMessage.style.display = 'block';
+                formMessage.style.backgroundColor = '#f8d7da';
+                formMessage.style.color = '#721c24';
+                formMessage.style.borderLeft = '4px solid #721c24';
+                formMessage.textContent = 'Error submitting form. Please try again.';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Demo Request';
+            });
+        });
     </script>
     </body>
 </html>

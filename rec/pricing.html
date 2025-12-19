@@ -3,7 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BeClutch Camps - Pricing</title>
+    <title>Camp Management Software Pricing - BeClutch Plans & Costs</title>
+    <meta name="description" content="BeClutch offers flexible pricing plans for camp registration and management. See our affordable pricing for parks & recreation departments of all sizes.">
+    <meta name="keywords" content="camp software pricing, registration platform cost, parks and recreation software pricing, affordable camp management">
+    <meta name="author" content="BeClutch">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.beclutch.club/pricing.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.beclutch.club/pricing.html">
+    <meta property="og:title" content="Camp Software Pricing - BeClutch">
+    <meta property="og:description" content="Flexible, affordable pricing plans for camp registration and management software.">
+    <meta property="og:image" content="https://www.beclutch.club/img/BeClutchHome.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.beclutch.club/pricing.html">
+    <meta property="twitter:title" content="BeClutch Pricing">
+    <meta property="twitter:description" content="Flexible, affordable pricing plans for camp registration and management.">
+    <meta property="twitter:image" content="https://www.beclutch.club/img/BeClutchHome.png">
+    
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <style>
         /* --- [1] GLOBAL STYLES & VARIABLES (Copied from Home Page for consistency) --- */
         :root {
@@ -623,21 +644,106 @@
             <span class="close-btn" onclick="closeModal()">&times;</span>
             <h3>Schedule Your Demo</h3>
             <p>Tell us a little about your camp so we can tailor the demo to your needs.</p>
-            <form onsubmit="return submitForm()">
+            <form id="demoForm">
                 <div class="modal-form">
                     <label for="modalName">Your Name (Required)</label>
-                    <input type="text" id="modalName" required>
+                    <input type="text" id="modalName" name="name" required>
 
                     <label for="modalEmail">Work Email (Required)</label>
-                    <input type="email" id="modalEmail" required>
+                    <input type="email" id="modalEmail" name="email" required>
 
-                    <label for="modalMessage">Your Organization (Optional)</label>
-                    <textarea id="modalMessage" rows="3" placeholder="Town of Smithville Recreation"></textarea>
+                    <label for="modalOrganization">Your Organization (Optional)</label>
+                    <input type="text" id="modalOrganization" name="organization" placeholder="Town of Smithville Recreation">
 
-                    <button type="submit">Send Demo Request</button>
+                    <button type="submit" id="submitBtn">Send Demo Request</button>
+                    <div id="formMessage" style="display:none; margin-top: 1rem; padding: 1rem; border-radius: 5px;"></div>
                 </div>
             </form>
         </div>
     </div>
+
+    <script>
+        // Modal functions
+        function openModal() {
+            document.getElementById('demoModal').style.display = 'block';
+            resetForm();
+        }
+
+        function closeModal() {
+            document.getElementById('demoModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('demoModal')) {
+                closeModal();
+            }
+        }
+
+        function resetForm() {
+            document.getElementById('demoForm').reset();
+            document.getElementById('formMessage').style.display = 'none';
+            document.getElementById('submitBtn').disabled = false;
+            document.getElementById('submitBtn').textContent = 'Send Demo Request';
+        }
+
+        // Handle form submission
+        document.getElementById('demoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('modalName').value;
+            const email = document.getElementById('modalEmail').value;
+            const organization = document.getElementById('modalOrganization').value;
+            const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('formMessage');
+            
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            // Prepare form data
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('organization', organization);
+            
+            // Send to server
+            fetch('submit-demo.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    formMessage.style.display = 'block';
+                    formMessage.style.backgroundColor = '#d4edda';
+                    formMessage.style.color = '#155724';
+                    formMessage.style.borderLeft = '4px solid #155724';
+                    formMessage.textContent = 'Thank you, ' + name + '! Your demo request has been sent. We\'ll be in touch soon.';
+                    setTimeout(function() {
+                        closeModal();
+                        resetForm();
+                    }, 3000);
+                } else {
+                    formMessage.style.display = 'block';
+                    formMessage.style.backgroundColor = '#f8d7da';
+                    formMessage.style.color = '#721c24';
+                    formMessage.style.borderLeft = '4px solid #721c24';
+                    formMessage.textContent = 'Error: ' + data.message;
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Demo Request';
+                }
+            })
+            .catch(error => {
+                formMessage.style.display = 'block';
+                formMessage.style.backgroundColor = '#f8d7da';
+                formMessage.style.color = '#721c24';
+                formMessage.style.borderLeft = '4px solid #721c24';
+                formMessage.textContent = 'Error submitting form. Please try again.';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Demo Request';
+            });
+        });
+    </script>
 </body>
 </html>
