@@ -590,21 +590,110 @@
     </header>
 
     <main>
-        
-        <section class="content-image-wrapper" style="padding: 2rem 0;">
+        <section class="hero">
             <div class="container">
-                <img src="img/mobile-app-image.jpg" alt="Mobile App information content" style="width: 100%; height: auto; display: block;">
+                <div class="hero-content">
+                    <h1>Manage Your Programs From Anywhere</h1>
+                    <p>Empower your staff and connect with your community with the BeClutch Mobile App. Designed for Parks & Rec professionals on the go, our app puts essential tools right in your pocket. Available for iOS and Android.</p>
+                    <div class="hero-buttons">
+                        <a onclick="openModal()" class="btn btn-primary">Schedule a Free Demo</a>
+                        <a href="#features" class="btn btn-secondary">Explore App Features</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="trust-bar">
+            <div class="container">
+                <p>The essential mobile tool for modern Parks & Rec departments.</p>
+            </div>
+        </div>
+
+        <section id="features" class="feature-highlight">
+            <div class="container">
+                <div class="feature-highlight-grid">
+                    <div class="feature-highlight-text">
+                        <h2>Key Information at Your Fingertips</h2>
+                        <p>The BeClutch app gives your coaches, counselors, and program staff real-time access to the information they need to run programs safely and efficiently, without being tied to a desk.</p>
+                        <ul class="check-list">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" /></svg>
+                                <span><strong>Mobile Check-in/Check-out:</strong> Streamline attendance tracking. Staff can quickly check participants in and out, with timestamps recorded automatically in the system.</span>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" /></svg>
+                                <span><strong>Access to Rosters & Emergency Info:</strong> View up-to-date program rosters, and instantly access crucial information like allergies, medical notes, and emergency contacts.</span>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" /></svg>
+                                <span><strong>Parent Communication:</strong> Send instant push notifications and messages to parents of a specific group or an entire program for important updates, reminders, or emergencies.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="feature-highlight-visual">
+                        <img src="img/app-screenshot.png" alt="A screenshot of the BeClutch mobile app dashboard">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="advantages" style="background-color: var(--color-light-gray);">
+            <div class="container">
+                <h2>Connect Your Staff, Engage Your Community</h2>
+                <div class="advantages-grid" style="grid-template-columns: 1fr; gap: 2rem;">
+                    <div class="advantage-card" style="text-align: left; padding: 2rem;">
+                        <h3>Enhance Safety and Compliance</h3>
+                        <p>With instant access to medical information and emergency contacts, your staff can respond to incidents quickly and effectively. Digital check-in and check-out logs provide an accurate record of attendance, improving accountability and security.</p>
+                    </div>
+                    <div class="advantage-card" style="text-align: left; padding: 2rem;">
+                        <h3>Improve Parent Communication</h3>
+                        <p>Keep parents informed and engaged. Send reminders about schedule changes, weather cancellations, or what to bring for the day. A direct line of communication builds trust and provides parents with peace of mind.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta" id="demo-2" style="padding: 3rem 0; background-color: var(--color-primary-dark);">
+            <div class="container">
+                <h2 style="color: white;">Put Program Management in Your Pocket</h2>
+                <p style="color: white;">Discover how the BeClutch mobile app can empower your team and improve program delivery. Schedule a demo today.</p>
+                <a onclick="openModal()" class="btn btn-secondary">Schedule Your Demo</a>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container" style="max-width: 800px; text-align: center;">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item" style="text-align: left; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                    <h3>Is the app for staff, parents, or both?</h3>
+                    <p>The current BeClutch app is designed specifically for program staff, including directors, counselors, and coaches. It provides them with the administrative tools they need to manage programs in the field. We are developing a parent-facing portal as part of our future roadmap.</p>
+                </div>
+
+                <div class="faq-item" style="text-align: left; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                    <h3>What devices does the app work on?</h3>
+                    <p>The BeClutch mobile app is available for both iOS (on the Apple App Store) and Android (on the Google Play Store). It is designed to work on both smartphones and tablets.</p>
+                </div>
+
+                <div class="faq-item" style="text-align: left; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                    <h3>How do we control what information staff can see?</h3>
+                    <p>BeClutch features role-based security. You can assign staff members to specific programs, and they will only be able to see the rosters and information for the programs they are assigned to. This ensures data privacy and security.</p>
+                </div>
+
+                <div class="faq-item" style="text-align: left;">
+                    <h3>Does the app work offline?</h3>
+                    <p>While a data connection is required for real-time updates and communication, core information like rosters and participant details can be cached on the device for temporary offline access, ensuring you have critical information even in areas with poor connectivity.</p>
+                </div>
             </div>
         </section>
 
         <section class="final-cta" id="demo" style="padding: 3rem 0; background-color: var(--color-light-gray);">
             <div class="container">
-                <h2>Ready to see it in action?</h2>
-                <p>Schedule a 15-minute demo to see how BeClutch can solve your biggest registration challenges.</p>
-                <a onclick="openModal()" class="btn btn-primary">Schedule Your Demo</a>
+                <h2>Ready to Mobilize Your Team?</h2>
+                <p>Schedule a 15-minute demo to see how the BeClutch mobile app can streamline your on-the-ground operations.</p>
+                <a onclick="openModal()" class="btn btn-primary">Schedule Your Free Demo</a>
             </div>
         </section>
-
     </main>
 
     <footer class="footer">

@@ -590,21 +590,110 @@
     </header>
 
     <main>
-        
-        <section class="content-image-wrapper" style="padding: 2rem 0;">
+        <section class="hero">
             <div class="container">
-                <img src="img/performance-image.jpg" alt="Performance information content" style="width: 100%; height: auto; display: block;">
+                <div class="hero-content">
+                    <h1>Performance You Can Rely On</h1>
+                    <p>On registration day, you need a platform that just works. BeClutch is built on world-class infrastructure to handle thousands of concurrent users without breaking a sweat. Say goodbye to website crashes, slow load times, and frustrated parents.</p>
+                    <div class="hero-buttons">
+                        <a onclick="openModal()" class="btn btn-primary">Schedule a Free Demo</a>
+                        <a href="#features" class="btn btn-secondary">Learn About Our Tech</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="trust-bar">
+            <div class="container">
+                <p>Powered by Amazon Web Services (AWS) for 99.99% uptime and enterprise-grade security.</p>
+            </div>
+        </div>
+
+        <section id="features" class="feature-highlight">
+            <div class="container">
+                <div class="feature-highlight-grid">
+                    <div class="feature-highlight-text">
+                        <h2>Built for Peak Demand</h2>
+                        <p>We understand that your registration system faces its biggest test on the day registration opens. Our platform is architected to handle massive traffic spikes, ensuring a smooth and fair process for everyone in your community.</p>
+                        <ul class="check-list">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" /></svg>
+                                <span><strong>Scalable Cloud Infrastructure:</strong> Our platform is built on AWS, the same backbone used by Netflix, Airbnb, and the CIA. It automatically scales to meet demand, so your system is always fast and responsive.</span>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" /></svg>
+                                <span><strong>Load Balancing:</strong> We distribute incoming traffic across multiple servers, preventing any single point of failure and ensuring a consistent experience for all users, even during the busiest moments.</span>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" /></svg>
+                                <span><strong>Data Security & Backups:</strong> Your data is your most valuable asset. We protect it with end-to-end encryption, and our systems are automatically backed up daily to prevent data loss.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="feature-highlight-visual">
+                        <img src="img/performance-image.jpg" alt="A diagram showing the BeClutch scalable cloud architecture">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="advantages" style="background-color: var(--color-light-gray);">
+            <div class="container">
+                <h2>Peace of Mind for Your Department</h2>
+                <div class="advantages-grid" style="grid-template-columns: 1fr; gap: 2rem;">
+                    <div class="advantage-card" style="text-align: left; padding: 2rem;">
+                        <h3>A Frustration-Free Experience</h3>
+                        <p>A slow or crashing website on registration day leads to angry phone calls and a loss of community trust. BeClutch's reliable performance ensures that parents have a positive, seamless experience, reflecting well on your department and its programs.</p>
+                    </div>
+                    <div class="advantage-card" style="text-align: left; padding: 2rem;">
+                        <h3>Focus on Your Programs, Not Your IT</h3>
+                        <p>You shouldn't have to be a tech expert to run your department. With BeClutch, you can have confidence in your software's performance and security, allowing you to focus your energy on creating and managing great recreational experiences for your community.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta" id="demo-2" style="padding: 3rem 0; background-color: var(--color-primary-dark);">
+            <div class="container">
+                <h2 style="color: white;">Experience the BeClutch Difference</h2>
+                <p style="color: white;">Let us show you how our robust platform can handle your biggest registration challenges. Schedule a personalized demo today.</p>
+                <a onclick="openModal()" class="btn btn-secondary">Schedule Your Demo</a>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container" style="max-width: 800px; text-align: center;">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item" style="text-align: left; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                    <h3>What is "uptime" and why is it important?</h3>
+                    <p>Uptime is the measure of time a system is successfully operational. Our 99.99% uptime guarantee means that our system is available and running virtually all the time, ensuring that your registration portal is always accessible to your community when they need it.</p>
+                </div>
+
+                <div class="faq-item" style="text-align: left; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                    <h3>Our current system crashes every year. How is BeClutch different?</h3>
+                    <p>Many older systems are built on a single server with limited capacity. BeClutch is built on a modern, elastic cloud infrastructure. This means that as more users visit the site, our system automatically adds more resources to handle the load. This prevents the overloads that cause crashes.</p>
+                </div>
+
+                <div class="faq-item" style="text-align: left; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                    <h3>Is our community's personal information safe?</h3>
+                    <p>Yes. We use industry-standard SSL encryption for all data transmitted between the user's browser and our servers. All sensitive data is encrypted at rest in our database. We adhere to strict security protocols to protect all personal information.</p>
+                </div>
+
+                <div class="faq-item" style="text-align: left;">
+                    <h3>Do we need our own IT department to manage BeClutch?</h3>
+                    <p>Not at all. BeClutch is a fully managed, software-as-a-service (SaaS) platform. We handle all the technical aspects—security, updates, backups, and performance monitoring. You simply log in and use the software.</p>
+                </div>
             </div>
         </section>
 
         <section class="final-cta" id="demo" style="padding: 3rem 0; background-color: var(--color-light-gray);">
             <div class="container">
-                <h2>Ready to see it in action?</h2>
-                <p>Schedule a 15-minute demo to see how BeClutch can solve your biggest registration challenges.</p>
-                <a onclick="openModal()" class="btn btn-primary">Schedule Your Demo</a>
+                <h2>Tired of Registration Day Disasters?</h2>
+                <p>Schedule a 15-minute demo to learn how BeClutch's superior performance can provide a reliable, stress-free registration experience for your staff and community.</p>
+                <a onclick="openModal()" class="btn btn-primary">Schedule Your Free Demo</a>
             </div>
         </section>
-
     </main>
 
     <footer class="footer">

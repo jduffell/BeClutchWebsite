@@ -590,21 +590,115 @@
     </header>
 
     <main>
-        
-        <section class="content-image-wrapper" style="padding: 2rem 0;">
+        <section class="hero">
             <div class="container">
-                <img src="img/treasury-image.jpg" alt="Treasury information content" style="width: 100%; height: auto; display: block;">
+                <div class="hero-content">
+                    <h1>Simplify Your Financial Management</h1>
+                    <p>Take control of your department's finances with BeClutch's integrated treasury tools. From collecting payments to reconciling accounts and generating reports, our platform streamlines every step of your financial workflow, saving you time and ensuring accuracy.</p>
+                    <div class="hero-buttons">
+                        <a onclick="openModal()" class="btn btn-primary">Schedule a Free Demo</a>
+                        <a href="#features" class="btn btn-secondary">Explore Features</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="trust-bar">
+            <div class="container">
+                <p>The trusted financial backbone for community and recreation programs.</p>
+            </div>
+        </div>
+
+        <section id="features" class="feature-highlight">
+            <div class="container">
+                <div class="feature-highlight-grid">
+                    <div class="feature-highlight-text">
+                        <h2>Automated, Accurate, and All in One Place</h2>
+                        <p>Say goodbye to manual spreadsheets and disjointed systems. BeClutch provides a unified dashboard to manage all your financial data, giving you a clear, real-time picture of your department's financial health.</p>
+                        <ul class="check-list">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" /></svg>
+                                <span><strong>Effortless Payment Collection:</strong> Accept online payments via credit card for all your programs. Our system automatically tracks every transaction, linking it directly to the participant's registration.</span>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" /></svg>
+                                <span><strong>Simplified Reconciliation:</strong> Match bank deposits with system-generated reports in just a few clicks. Eliminate the guesswork and hours spent manually cross-referencing statements.</span>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" /></svg>
+                                <span><strong>Powerful Reporting:</strong> Generate detailed financial reports for any date range. Track revenue by program, analyze payment trends, and export data for your accounting software or town audits.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="feature-highlight-visual">
+                        <img src="img/treasury-image.jpg" alt="A screenshot of the BeClutch financial dashboard">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="advantages" style="background-color: var(--color-light-gray);">
+            <div class="container">
+                <h2>Financial Clarity for Your Department</h2>
+                <div class="advantages-grid" style="grid-template-columns: 1fr; gap: 2rem;">
+                    <div class="advantage-card" style="text-align: left; padding: 2rem;">
+                        <h3>Never Miss a Payment</h3>
+                        <p>Our system provides complete visibility into every transaction. See who has paid, who has an outstanding balance, and manage refunds and credits from one central location. Set up automated payment reminders to reduce late payments and improve your cash flow.</p>
+                    </div>
+                    <div class="advantage-card" style="text-align: left; padding: 2rem;">
+                        <h3>Budget with Confidence</h3>
+                        <p>With accurate, up-to-the-minute financial data, you can make smarter budgeting decisions. Understand which programs are most profitable, forecast revenue with greater accuracy, and present clear, professional reports to your board or town council.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta" id="demo-2" style="padding: 3rem 0; background-color: var(--color-primary-dark);">
+            <div class="container">
+                <h2 style="color: white;">Ready for a Clearer Financial Picture?</h2>
+                <p style="color: white;">See for yourself how BeClutch can simplify your financial operations. Schedule a personalized demo today.</p>
+                <a onclick="openModal()" class="btn btn-secondary">Schedule Your Demo</a>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container" style="max-width: 800px; text-align: center;">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item" style="text-align: left; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                    <h3>What payment gateways do you support?</h3>
+                    <p>We integrate seamlessly with Stripe, a global leader in secure online payments. This allows you to safely accept all major credit cards. The setup is simple, and we guide you through the entire process.</p>
+                </div>
+
+                <div class="faq-item" style="text-align: left; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                    <h3>How do we handle refunds?</h3>
+                    <p>Refunds can be processed directly through the BeClutch dashboard. You can issue full or partial refunds with just a few clicks. The system automatically records the transaction, ensuring your financial records remain accurate.</p>
+                </div>
+
+                <div class="faq-item" style="text-align: left; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                    <h3>Can we set up payment plans for more expensive programs?</h3>
+                    <p>Yes, our system allows you to offer flexible payment plans. You can define the number of installments and the payment schedule. The system will then automatically charge the participant's card on the scheduled dates, making your programs more accessible to the community.</p>
+                </div>
+
+                <div class="faq-item" style="text-align: left; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                    <h3>What kind of financial reports can we generate?</h3>
+                    <p>You can generate a wide variety of reports, including detailed transaction lists, revenue summaries by program, outstanding balance reports, and discount code usage. All reports can be filtered by date and exported to CSV or PDF for easy sharing and analysis.</p>
+                </div>
+
+                <div class="faq-item" style="text-align: left;">
+                    <h3>Is our financial data secure?</h3>
+                    <p>Absolutely. We take security very seriously. All financial data is encrypted, and our payment processing is handled by Stripe, which is PCI Level 1 compliant—the highest level of security available.</p>
+                </div>
             </div>
         </section>
 
         <section class="final-cta" id="demo" style="padding: 3rem 0; background-color: var(--color-light-gray);">
             <div class="container">
-                <h2>Ready to see it in action?</h2>
-                <p>Schedule a 15-minute demo to see how BeClutch can solve your biggest registration challenges.</p>
-                <a onclick="openModal()" class="btn btn-primary">Schedule Your Demo</a>
+                <h2>Modernize Your Financial Workflow</h2>
+                <p>Stop wasting time on manual financial tasks. Schedule a 15-minute demo to see how BeClutch can automate your payment and reconciliation process.</p>
+                <a onclick="openModal()" class="btn btn-primary">Schedule Your Free Demo</a>
             </div>
         </section>
-
     </main>
 
     <footer class="footer">

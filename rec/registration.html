@@ -591,17 +591,113 @@
 
     <main>
         
-        <section class="content-image-wrapper" style="padding: 2rem 0;">
+        <section class="hero">
             <div class="container">
-                <img src="img/registration-image.jpg" alt="Registration information content" style="width: 100%; height: auto; display: block;">
+                <div class="hero-content">
+                    <h1>Streamline Your Program Registration</h1>
+                    <p>Modernize your Parks & Rec department with a powerful, easy-to-use online registration system. Eliminate paperwork, reduce administrative burden, and provide a seamless experience for your community. BeClutch is your all-in-one solution for managing everything from summer camps to sports leagues.</p>
+                    <div class="hero-buttons">
+                        <a onclick="openModal()" class="btn btn-primary">Schedule a Free Demo</a>
+                        <a href="#features" class="btn btn-secondary">Explore Features</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="trust-bar">
+            <div class="container">
+                <p>Trusted by Parks & Rec departments to manage thousands of registrations annually.</p>
+            </div>
+        </div>
+
+        <section id="features" class="feature-highlight">
+            <div class="container">
+                <div class="feature-highlight-grid">
+                    <div class="feature-highlight-text">
+                        <h2>Everything You Need in One Simple Platform</h2>
+                        <p>BeClutch was designed with the specific needs of Parks & Rec departments in mind. Our registration software is flexible, powerful, and user-friendly for both your staff and your community members.</p>
+                        <ul class="check-list">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" /></svg>
+                                <span><strong>Customizable Registration Forms:</strong> Build forms that capture the exact information you need, from t-shirt sizes to medical information and emergency contacts.</span>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" /></svg>
+                                <span><strong>Integrated Payment Processing:</strong> Securely accept credit card payments online. Automate refunds, set up payment plans, and easily track your revenue.</span>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" /></svg>
+                                <span><strong>Waiver Management:</strong> Collect digital signatures on waivers and liability forms, ensuring all participants are covered before your programs begin.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="feature-highlight-visual">
+                        <img src="img/registration-image.jpg" alt="A screenshot of the BeClutch online registration form builder">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="advantages" style="background-color: var(--color-light-gray);">
+            <div class="container">
+                <h2>Transform Your Registration Process</h2>
+                <div class="advantages-grid" style="grid-template-columns: 1fr; gap: 2rem;">
+                    <div class="advantage-card" style="text-align: left; padding: 2rem;">
+                        <h3>For Your Department: Efficiency and Insight</h3>
+                        <p>Our centralized dashboard gives you a real-time overview of all your programs. See enrollment numbers at a glance, manage waitlists automatically, and pull detailed reports in seconds. Reduce phone calls and manual data entry, freeing up your staff to focus on what matters most: delivering great programs for your community.</p>
+                    </div>
+                    <div class="advantage-card" style="text-align: left; padding: 2rem;">
+                        <h3>For Your Community: Convenience and Simplicity</h3>
+                        <p>Parents and participants will love the ability to register and pay from any device, 24/7. Our mobile-friendly portal makes it easy to find programs, fill out forms, and manage their family's schedule. No more paper forms, no more mailing checks—just a simple, modern registration experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta" id="demo-2" style="padding: 3rem 0; background-color: var(--color-primary-dark);">
+            <div class="container">
+                <h2 style="color: white;">Ready to see how it works?</h2>
+                <p style="color: white;">Let us show you how BeClutch can revolutionize your registration process. Schedule a personalized demo today.</p>
+                <a onclick="openModal()" class="btn btn-secondary">Schedule Your Demo</a>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container" style="max-width: 800px; text-align: center;">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item" style="text-align: left; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                    <h3>Can we customize the registration forms for different programs?</h3>
+                    <p>Absolutely. Our form builder is highly flexible. You can create unique forms for each program, camp, or league. Add custom fields, required questions, and conditional logic (e.g., showing certain questions only if a participant selects a specific option). This ensures you collect exactly the information you need for every activity.</p>
+                </div>
+
+                <div class="faq-item" style="text-align: left; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                    <h3>How does payment processing work?</h3>
+                    <p>BeClutch integrates with leading secure payment gateways like Stripe. You can accept all major credit cards directly on your registration site. Funds are deposited directly into your department's bank account. Our system also supports discount codes, early-bird pricing, and automated payment plans to provide more flexibility for your community.</p>
+                </div>
+
+                <div class="faq-item" style="text-align: left; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                    <h3>Is the system mobile-friendly for parents?</h3>
+                    <p>Yes! Our entire registration portal is designed to be fully responsive, meaning it works beautifully on smartphones, tablets, and desktop computers. Parents can easily browse programs, complete registrations, and make payments on the go, from any device.</p>
+                </div>
+
+                <div class="faq-item" style="text-align: left; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                    <h3>Can we manage waitlists for full programs?</h3>
+                    <p>Yes, our system includes automated waitlist functionality. Once a program reaches capacity, the system will automatically start a waitlist. If a spot opens up, you can easily notify the next person on the list and invite them to register, all through the BeClutch dashboard.</p>
+                </div>
+
+                <div class="faq-item" style="text-align: left;">
+                    <h3>What kind of support do you offer?</h3>
+                    <p>We pride ourselves on offering exceptional customer support. Every BeClutch partner gets a dedicated account manager and access to our support team via phone and email. We're here to help with everything from initial setup and training to any questions that come up along the way.</p>
+                </div>
             </div>
         </section>
 
         <section class="final-cta" id="demo" style="padding: 3rem 0; background-color: var(--color-light-gray);">
             <div class="container">
-                <h2>Ready to see it in action?</h2>
-                <p>Schedule a 15-minute demo to see how BeClutch can solve your biggest registration challenges.</p>
-                <a onclick="openModal()" class="btn btn-primary">Schedule Your Demo</a>
+                <h2>Ready to Eliminate Registration Headaches?</h2>
+                <p>Schedule a 15-minute demo to see how BeClutch can solve your biggest registration challenges and give your staff back valuable time.</p>
+                <a onclick="openModal()" class="btn btn-primary">Schedule Your Free Demo</a>
             </div>
         </section>
 
